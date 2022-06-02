@@ -143,7 +143,7 @@ public class CodecFactory implements CompressionCodecFactory {
       this.codecName = codecName;
       this.codec = getCodec(codecName);
       if (codec != null) {
-        this.compressor = CodecPool.getCompressor(codec);
+        this.compressor = CodecPool.getCompressor(codec, configuration);
         this.compressedOutBuffer = new ByteArrayOutputStream(pageSize);
       } else {
         this.compressor = null;
